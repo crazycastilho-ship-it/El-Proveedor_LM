@@ -1,5 +1,5 @@
 -- ============================================================
---  Fonti Cerdo de la 18 — Esquema de base de datos (Supabase)
+--  El Proveedor_LM — Esquema de base de datos (Supabase)
 --  Ejecuta en:  Supabase > SQL Editor > New query
 --  Puedes ejecutarlo varias veces sin problema (usa IF NOT EXISTS).
 -- ============================================================

@@ -3,20 +3,20 @@
    Paleta: ahumado + papel de carnicería + páprika + latón
    ============================================================ */
 :root {
-  --smoke:    #1b1d22;
-  --smoke-2:  #24262c;
-  --smoke-3:  #31343c;
-  --board:    #26282f;
-  --paper:    #f4f1ea;
-  --paper-dim:#b4b0a6;
-  --paprika:  #a86a1b;
-  --paprika-2:#c88a2a;
-  --brass:    #d4b36a;
-  --line:     rgba(244, 241, 234, 0.12);
-  --line-2:   rgba(244, 241, 234, 0.26);
-  --ok:       #7bb661;
+  --smoke:    #f1ebdf;   /* fondo blanco hueso */
+  --smoke-2:  #fbf7ef;   /* superficies / tarjetas */
+  --smoke-3:  #e8e1d1;   /* superficie más marcada / hover */
+  --board:    #f6f1e7;
+  --paper:    #26272e;   /* tinta oscura (texto y texto sobre dorado) */
+  --paper-dim:#6f6c64;   /* texto secundario */
+  --paprika:  #cf9d1e;   /* dorado de acento (relleno de botones) */
+  --paprika-2:#e3b63f;
+  --brass:    #8f7016;   /* dorado para texto (legible sobre claro) */
+  --line:     rgba(40, 34, 20, 0.12);
+  --line-2:   rgba(40, 34, 20, 0.24);
+  --ok:       #5f9a41;
   --radius:   14px;
-  --shadow:   0 22px 55px -24px rgba(0,0,0,0.75);
+  --shadow:   0 16px 40px -24px rgba(40, 30, 10, 0.30);
   --ring:     0 0 0 2px var(--smoke), 0 0 0 4px var(--brass);
   /* ritmo de espaciado (base 4) */
   --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px;
@@ -52,7 +52,7 @@ html { scrollbar-color: var(--smoke-3) var(--smoke); }
 ::-webkit-scrollbar { width: 12px; height: 12px; }
 ::-webkit-scrollbar-track { background: var(--smoke); }
 ::-webkit-scrollbar-thumb { background: var(--smoke-3); border: 3px solid var(--smoke); border-radius: 999px; }
-::-webkit-scrollbar-thumb:hover { background: #4a362b; }
+::-webkit-scrollbar-thumb:hover { background: #cfc6b3; }
 input, textarea { caret-color: var(--paprika-2); }
 /* los precios y cantidades son datos: numerales tabulares que alinean */
 .cut-card-price, .cut-price, .ci-price, .totals, .qty-display input, .ci-stepper span,
@@ -64,7 +64,7 @@ input, textarea { caret-color: var(--paprika-2); }
 /* --------------------------- Header --------------------------- */
 .site-header {
   position: sticky; top: 0; z-index: 40;
-  background: rgba(36, 26, 23, 0.9);
+  background: rgba(243, 238, 228, 0.88);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -138,9 +138,10 @@ h1 {
 
 /* ---------------------- Cerdo interactivo --------------------- */
 .pig-wrap {
+  /* Tablero gris carbón: el despiece es crema y resalta sobre el gris */
   background:
-    radial-gradient(130% 100% at 50% 0%, #3a2c23 0%, var(--board) 42%, var(--smoke) 100%);
-  border: 1px solid var(--line-2);
+    radial-gradient(130% 100% at 50% 0%, #3c3f45 0%, #2d2f34 46%, #202125 100%);
+  border: 1px solid rgba(239,230,211,0.12);
   border-radius: 22px;
   padding: var(--s5) var(--s4) var(--s3);
   position: relative;
@@ -150,8 +151,8 @@ h1 {
 .pig-svg { width: 100%; height: auto; display: block; }
 
 .region {
-  fill: rgba(200, 69, 29, 0);
-  stroke: rgba(200, 69, 29, 0);
+  fill: rgba(207, 157, 30, 0);
+  stroke: rgba(207, 157, 30, 0);
   stroke-width: 2.5;
   stroke-linejoin: round;
   cursor: pointer;
@@ -162,7 +163,7 @@ h1 {
 }
 .region.on,
 .region:focus-visible {
-  fill: rgba(200, 69, 29, 0.28);
+  fill: rgba(207, 157, 30, 0.30);
   stroke: var(--paprika-2);
 }
 
@@ -179,7 +180,7 @@ h1 {
 .piece-tip strong { color: var(--paper); font-size: 14px; }
 .piece-tip span { color: var(--brass); font-weight: 700; }
 .pig-hint {
-  text-align: center; color: var(--paper-dim);
+  text-align: center; color: rgba(239,230,211,0.55);
   font-size: 13px; margin: 12px 0 6px; letter-spacing: 0.3px;
 }
 
@@ -268,7 +269,7 @@ h1 {
   padding: 10px 16px; font-size: 14px; font-weight: 600; cursor: pointer;
   transition: background .18s ease;
 }
-.promo-upload:hover { background: #4a362b; }
+.promo-upload:hover { background: #ddd4c1; }
 .promo-upload.is-busy { opacity: 0.6; cursor: wait; }
 .promo-form { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s3) var(--s4); }
 .promo-form .promo-f-wide { grid-column: 1 / -1; }
@@ -303,11 +304,11 @@ h1 {
 }
 .cut-card:hover, .cut-card:focus-visible {
   border-color: var(--line-2);
-  background: #352821;
+  background: #ffffff;
   transform: translateY(-3px);
-  box-shadow: 0 14px 28px -18px rgba(0,0,0,0.8);
+  box-shadow: 0 14px 30px -20px rgba(40,30,10,0.28);
 }
-.cut-card:focus-visible { box-shadow: var(--ring), 0 14px 28px -18px rgba(0,0,0,0.8); }
+.cut-card:focus-visible { box-shadow: var(--ring), 0 14px 30px -20px rgba(40,30,10,0.28); }
 .cut-card:active { transform: translateY(-1px); }
 .cut-card-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
 .cut-card-name { font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }

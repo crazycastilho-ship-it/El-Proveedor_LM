@@ -85,8 +85,8 @@ export const CONFIG = {
 
 // Colores de la marca (deben coincidir con las variables CSS de styles.css).
 export const THEME = {
-  smoke: '#1b1d22',
-  paper: '#f4f1ea',
-  paprika: '#a86a1b',
-  brass: '#d4b36a',
+  smoke: '#f1ebdf',
+  paper: '#26272e',
+  paprika: '#cf9d1e',
+  brass: '#8f7016',
 }

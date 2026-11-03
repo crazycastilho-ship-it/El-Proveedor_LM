@@ -20,6 +20,8 @@ export default function Tienda() {
 
   return (
     <>
+      <PromoBanner />
+
       <section className="hero">
         <div className="hero-copy">
           <h1>Elige tu corte y nosotros te lo llevamos.</h1>
@@ -29,8 +31,6 @@ export default function Tienda() {
         </div>
         <PigDiagram cortes={cortes} onSelect={setSelected} />
       </section>
-
-      <PromoBanner />
 
       <section id="cortes" className="cuts" aria-label="Todos los cortes">
         <h2 className="section-title">Todos los cortes</h2>
