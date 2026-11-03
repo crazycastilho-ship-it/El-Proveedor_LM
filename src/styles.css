@@ -96,8 +96,8 @@ input, textarea { caret-color: var(--paprika-2); }
 .logo-l0 { font-family: 'Work Sans', sans-serif; font-weight: 700; font-size: 11px; color: var(--brass); letter-spacing: 3px; text-transform: uppercase; }
 .logo-l1 { font-family: 'Oswald', system-ui, sans-serif; font-size: 28px; letter-spacing: 0.2px; }
 .logo-l2 { font-family: 'Work Sans', sans-serif; font-weight: 600; font-size: 16px; color: var(--brass); letter-spacing: 1.8px; }
-.logo-img { height: 116px; width: auto; display: block; }
-@media (max-width: 720px) { .logo-img { height: 84px; } }
+.logo-img { height: 134px; width: auto; display: block; }
+@media (max-width: 720px) { .logo-img { height: 96px; } }
 .logo-badge-img {
   width: 68px; height: 68px; display: block;
   border-radius: 50%; object-fit: cover;
@@ -151,11 +151,11 @@ h1 {
   /* Tablero gris carbón: el despiece es crema y resalta sobre el gris */
   background:
     radial-gradient(130% 100% at 50% 0%, #3c3f45 0%, #2d2f34 46%, #202125 100%);
-  border: 1px solid rgba(239,230,211,0.12);
-  border-radius: 22px;
+  border: 1px solid rgba(143,112,22,0.22);
+  border-radius: var(--radius);
   padding: var(--s5) var(--s4) var(--s3);
   position: relative;
-  box-shadow: inset 0 1px 0 rgba(239,230,211,0.06), var(--shadow);
+  box-shadow: inset 0 1px 0 rgba(239,230,211,0.06), 0 22px 54px -28px rgba(60,42,14,0.5);
 }
 .pig-stage { position: relative; width: 100%; max-width: 760px; margin: 0 auto; }
 .pig-svg { width: 100%; height: auto; display: block; }
@@ -200,11 +200,10 @@ h1 {
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
+  border: 1px solid rgba(143,112,22,0.22);
+  box-shadow: 0 22px 54px -28px rgba(60,42,14,0.5);
   background: var(--smoke-2);
-  aspect-ratio: 16 / 9;   /* los reels horizontales lo llenan por completo */
-  max-height: 72vh;
+  aspect-ratio: 16 / 9;   /* ancho completo, igual que el cerdo */
 }
 .promo-slide {
   position: absolute; inset: 0;
@@ -225,7 +224,7 @@ h1 {
 .promo-media {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
-  object-fit: contain; object-position: center;
+  object-fit: cover; object-position: center;
   display: block;
 }
 .promo-sound {
@@ -247,7 +246,6 @@ h1 {
 }
 .promo-dot.is-active { width: 26px; background: var(--brass); }
 @media (max-width: 720px) {
-  .promo-stage { max-height: 68vh; }
   .promo-sound { width: 40px; height: 40px; right: 10px; bottom: 10px; }
 }
 @media (prefers-reduced-motion: reduce) {
