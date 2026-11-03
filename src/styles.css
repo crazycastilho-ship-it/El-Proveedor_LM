@@ -3,9 +3,9 @@
    Paleta: ahumado + papel de carnicería + páprika + latón
    ============================================================ */
 :root {
-  --smoke:    #f1ebdf;   /* fondo blanco hueso */
-  --smoke-2:  #fbf7ef;   /* superficies / tarjetas */
-  --smoke-3:  #e8e1d1;   /* superficie más marcada / hover */
+  --smoke:    #e7dcc5;   /* fondo hueso cálido (tan) — da contraste a las tarjetas */
+  --smoke-2:  #fbf8f1;   /* superficies / tarjetas (crema claro, resaltan) */
+  --smoke-3:  #ece4d4;   /* superficie más marcada / hover */
   --board:    #f6f1e7;
   --paper:    #26272e;   /* tinta oscura (texto y texto sobre dorado) */
   --paper-dim:#6f6c64;   /* texto secundario */
@@ -26,7 +26,15 @@
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: var(--smoke);
+  overflow-x: clip;
+  background-color: var(--smoke);
+  /* acabado de papel: brillo cálido arriba + grano sutil sobre el tono tan */
+  background-image:
+    radial-gradient(120% 70% at 50% -8%, rgba(252,249,243,0.7), rgba(252,249,243,0) 52%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  background-repeat: no-repeat, repeat;
+  background-size: 100% 680px, 180px 180px;
+  background-attachment: fixed, scroll;
   color: var(--paper);
   font-family: 'Work Sans', system-ui, -apple-system, sans-serif;
   font-size: 16px;
