@@ -14,7 +14,7 @@ export const CONFIG = {
     // Si lo dejas en null, se muestra el logo de texto de abajo.
     // Para QUITAR el logo por completo, pon showLogo: false.
     showLogo: true,
-    logoSrc: null,
+    logoSrc: '/icons/logo-proveedor-full.png',
     // Logo de texto (se usa cuando logoSrc es null): número grande + nombre.
     logoBadge: 'LM',
     // Para usar una IMAGEN en la insignia (en vez del "18"), pon la ruta aquí.
